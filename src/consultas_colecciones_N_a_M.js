@@ -161,11 +161,7 @@ db.alumno.aggregate(
                 "total_por_idioma": {$multiply: 
                    ["$detalle.horas_cursadas", "$precio_cada_hora.precio_hora"]}
             }
-        },        {
-            $sort: {
-                año: 1, producto: 1
-            }
-        },
+        },    
 {
         $group: {
             _id: "$identificador_alumno",
@@ -219,11 +215,7 @@ db.alumno.aggregate(
                 "precio por hora": "$precio_cada_hora.precio_hora",
                 "total_por_idioma": {$multiply: ["$detalle.horas_cursadas", "$precio_cada_hora.precio_hora"]}
             }
-        },        {
-            $sort: {
-                año: 1, producto: 1
-            }
-        },
+        }, 
 {
         $group: {
             _id: "$identificador_alumno",
